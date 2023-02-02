@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace ProyectoFinal
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica de interacción para Page1.xaml
+    /// </summary>
+    public partial class Page1 : Page
     {
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
-            fecha.Text = DateTime.Now.ToString("D");
-
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start();
-        }
-
-        void timer_Tick(object sender, EventArgs e)
-        {
-            reloj.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
