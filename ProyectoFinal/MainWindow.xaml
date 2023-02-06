@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
-        Title="Reloj" Height="450" Width="800" Background="#FF0E0E0E">
+        Title="Reloj Infantes" Height="450" Width="800" Background="#FF0E0E0E">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,19 +21,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="2" x:Name="Cronómetro" HorizontalAlignment="Center" Height="28.014" Margin="0,0,0,20" TextWrapping="Wrap" Text="Cronómetro" VerticalAlignment="Bottom" Width="108.181" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight"/>
-            <TextBlock Grid.Column="3" x:Name="Temporizador" HorizontalAlignment="Center" Height="28.014" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="127.846" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight"><Run Text="Temporizado"/><Run Text="r"/><LineBreak/><Run/></TextBlock>
-            <TextBlock Grid.Column="0" x:Name="Reloj" HorizontalAlignment="Center" Height="28.014" Margin="0,0,0,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="45.716" Foreground="#FF00AEFF" FontSize="20" FontFamily="Yu Gothic UI Semilight"><Run Text="Reloj"/><Run Text=" mundial"/><Run Text=" Mundial"/></TextBlock>
-            <TextBlock Grid.Column="1" x:Name="Alarma" HorizontalAlignment="Center" Height="28.014" Margin="0,0,0,20" TextWrapping="Wrap" Text="Alarma" VerticalAlignment="Bottom" Width="66.108" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.112"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
+            <Button Grid.Column="0" Content="Reloj" x:Name="Reloj" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="32.5" Width="50" Margin="74,0,74,20" Foreground="#FF0098FF" FontSize="20" FontFamily="Yu Gothic UI Semilight" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Grid.Column="1" Click="Alarma_Click" Content="Alarma" x:Name="Alarma" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="32.5" Width="65" Margin="67.25,0,65.75,20" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight" Background="{x:Null}" BorderBrush="{x:Null}" Cursor=""/>
+            <Button Grid.Column="2" Click="Crono_Click" Content="Cronómetro" x:Name="Cronómetro" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="32.5" Width="110" Margin="44,0,44,20" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Button Grid.Column="3" Click="Temp_Click" Content="Temporizador" x:Name="Temporizador" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="32.5" Width="125" Margin="36.5,0,36.5,20" Foreground="#FF878787" FontSize="20" FontFamily="Yu Gothic UI Semilight" Background="{x:Null}" BorderBrush="{x:Null}"/>
         </Grid>
     </Grid>
 </Window>

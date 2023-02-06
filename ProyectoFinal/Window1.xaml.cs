@@ -10,34 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace ProyectoFinal
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica de interacción para Window1.xaml
+    /// </summary>
+    public partial class Window1 : Window
     {
-        public MainWindow()
+        public Window1()
         {
             InitializeComponent();
-
-            fecha.Text = DateTime.Now.ToString("D");
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start();
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Reloj_Click(object sender, EventArgs e)
         {
-            reloj.Text = DateTime.Now.ToLongTimeString();
-        }
-
-        private void Alarma_Click(object sender, EventArgs e)
-        {
-            Window1 alarma = new Window1();
-            alarma.Show();
+            MainWindow reloj = new MainWindow();
+            reloj.Show();
             Hide();
         }
 
