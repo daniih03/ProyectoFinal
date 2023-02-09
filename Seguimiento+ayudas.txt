@@ -11,5 +11,5 @@ Recuerda que los ajustes serán con ayuda de plugins en .xml
 Además debes agregar tu página Web en Odoo, como referencia al proyecto.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 09/02/2023
-Renombra el proyecto en consonancia con su bojetivo.
+Renombra el proyecto en consonancia con su objetivo.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
