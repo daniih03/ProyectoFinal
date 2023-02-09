@@ -4,7 +4,3 @@
   Este primer Script trata de una prueba visual para ver el aspecto gráfico y las funcionalidades principales que dicha aplicación una vez finalizada.
   
   Página Web: https://daniinfanteshuerta.odoo.com/
-
-# Profe:
-Recuerda que los ajustes serán con ayuda de plugins en .xml
-Además debes agregar tu página Web en Odoo, como referencia al proyecto.
