@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ProyectoFinal
 {
@@ -19,9 +20,37 @@ namespace ProyectoFinal
     /// </summary>
     public partial class Window3 : Window
     {
+        private DispatcherTimer timer = new DispatcherTimer();
+        private int timeLeft;
+
         public Window3()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            timeLeft = timeSlider.Value == 0 ? 0 : timeLeft - 1;
+            timeSlider.Value = timeLeft;
+        }
+
+        private void startButton_Click(object sender, RoutedEventArgs e)
+        {
+            timeLeft = (int)timeSlider.Value;
+        }
+
+        private void stopButton_Click(object sender, RoutedEventArgs e)
+        {
+            timeLeft = 0;
+            timeSlider.Value = 0;
         }
 
         private void Reloj_Click(object sender, EventArgs e)

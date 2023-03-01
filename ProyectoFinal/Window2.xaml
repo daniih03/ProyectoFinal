@@ -6,14 +6,13 @@
         xmlns:local="clr-namespace:ProyectoFinal"
         mc:Ignorable="d"
         Title="Reloj Infantes" Height="450" Width="800">
-
     <Grid Background="#FF0E0E0E">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="labelTiempo" Foreground="White"  Content="00:00:00" HorizontalAlignment="Center" Height="139.666" VerticalAlignment="Bottom" Width="392.5" Margin="201,0,198.5,129.667" Grid.RowSpan="2" FontFamily="Yu Gothic UI Semibold" FontSize="100"/>
+        <Label Grid.Row="0" x:Name="labelTiempo" Foreground="White"  Content="00:00:00" HorizontalAlignment="Center" Height="139.666" VerticalAlignment="Center" Width="392.5" Margin="201,0,198.5,129.667" Grid.RowSpan="2" FontFamily="Yu Gothic UI Semibold" FontSize="100"/>
         <Button Grid.Row="1" Click="Reset_Click" Content="Reiniciar" x:Name="Reiniciar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100" Margin="347.5,20,344.5,20" Foreground="#FFB2B2B2" FontSize="20" FontFamily="Yu Gothic UI Semilight" BorderBrush="#FFB2B2B2" Background="#FF2B2B2B"/>
         <Button Grid.Row="1" Click="Stop_Click" Content="Detener" x:Name="Detener" HorizontalAlignment="Left" VerticalAlignment="Center" Height="100" Width="100" Margin="74,20" Foreground="#FFDC0000" FontSize="20" FontFamily="Yu Gothic UI Semilight" BorderBrush="#FFDC0000" Background="#FF440000"/>
         <Button Grid.Row="1" Click="Start_Click" Content="Iniciar" x:Name="Iniciar" HorizontalAlignment="Right" VerticalAlignment="Center" Height="100" Width="100" Margin="74,20" Foreground="#FF00DC14" FontSize="20" FontFamily="Yu Gothic UI Semilight" BorderBrush="#FF00DC14" Background="#FF004406"/>
