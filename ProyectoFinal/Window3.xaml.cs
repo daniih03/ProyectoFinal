@@ -20,8 +20,8 @@ namespace ProyectoFinal
     /// </summary>
     public partial class Window3 : Window
     {
-        private DispatcherTimer timer = new DispatcherTimer();
         private int timeLeft;
+        private DispatcherTimer timer;
 
         public Window3()
         {
@@ -38,23 +38,33 @@ namespace ProyectoFinal
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            timeLeft = timeSlider.Value == 0 ? 0 : timeLeft - 1;
-            timeSlider.Value = timeLeft;
+            timeLeft = timeProgressBar.Value == 0 ? 0 : timeLeft - 1;
+            timeProgressBar.Value = timeLeft;
 
-            TimeSpan timeLeftTimeSpan = TimeSpan.FromSeconds(timeLeft);
-            string timeLeftString = timeLeftTimeSpan.ToString(@"mm\:ss");
-            timeLeftTextBlock.Text = timeLeftString;
+            if (timeProgressBar.Value == timeProgressBar.Minimum)
+            {
+                // El temporizador ha llegado a cero, realizar alguna acción aquí
+            }
+
+            timeProgressBar.InvalidateVisual();
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
-            timeLeft = (int)timeSlider.Value;
+            timeLeft = 120;
+            timeProgressBar.Value = timeLeft;
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             timeLeft = 0;
-            timeSlider.Value = 0;
+            timeProgressBar.Value = timeLeft;
         }
 
         private void Reloj_Click(object sender, EventArgs e)
