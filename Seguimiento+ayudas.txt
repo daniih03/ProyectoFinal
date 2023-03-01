@@ -13,3 +13,6 @@ Además debes agregar tu página Web en Odoo, como referencia al proyecto.
 09/02/2023
 Renombra el proyecto en consonancia con su objetivo.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+01/03/2023
+A día de hoy no has renombrado tu proyecto.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
