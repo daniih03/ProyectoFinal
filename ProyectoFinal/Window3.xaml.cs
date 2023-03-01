@@ -20,7 +20,7 @@ namespace ProyectoFinal
     /// </summary>
     public partial class Window3 : Window
     {
-        private int timeLeft;
+        private int timeLeft, tiempo;
         private DispatcherTimer timer;
 
         public Window3()
@@ -38,7 +38,7 @@ namespace ProyectoFinal
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            timeLeft = timeProgressBar.Value == 0 ? 0 : timeLeft - 1;
+            tiempo = timeLeft = timeProgressBar.Value == 0 ? 0 : timeLeft - 1;
             timeProgressBar.Value = timeLeft;
 
             if (timeProgressBar.Value == timeProgressBar.Minimum)
@@ -51,8 +51,11 @@ namespace ProyectoFinal
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
-            timeLeft = 120;
-            timeProgressBar.Value = timeLeft;
+
+            tiempo = int.Parse(timeLeftBox.Text);
+            timeLeft = tiempo;
+            timeProgressBar.Maximum = tiempo;
+            timeProgressBar.Value = tiempo;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
