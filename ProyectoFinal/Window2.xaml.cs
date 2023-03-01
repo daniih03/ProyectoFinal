@@ -20,39 +20,43 @@ namespace ProyectoFinal
     /// </summary>
     public partial class Window2 : Window
     {
-        private DispatcherTimer timer;
-        private TimeSpan elapsedTime;
+        private DispatcherTimer timer = new DispatcherTimer();
+        private int segundos = 0;
 
         public Window2()
         {
             InitializeComponent();
 
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            elapsedTime = elapsedTime.Add(timer.Interval);
-            tiempo.Text = elapsedTime.ToString("g");
+            segundos++;
+            labelTiempo.Content = TimeSpan.FromSeconds(segundos).ToString(@"hh\:mm\:ss");
         }
 
-        private void Stop_Click(object sender, EventArgs e)
-        {
-            timer.Stop();
-        }
-
-        private void Reset_Click(object sender, EventArgs e)
-        {
-            timer.Stop();
-            elapsedTime = TimeSpan.Zero;
-            tiempo.Text = elapsedTime.ToString("g");
-        }
-
-        private void Start_Click(object sender, EventArgs e)
+        private void Start_Click(object sender, RoutedEventArgs e)
         {
             timer.Start();
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            segundos = 0;
+            labelTiempo.Content = TimeSpan.FromSeconds(segundos).ToString(@"hh\:mm\:ss");
+            timer.Stop();
+        }
+
+        private void Stop_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            labelTiempo.Content = TimeSpan.FromSeconds(segundos).ToString(@"hh\:mm\:ss");
         }
 
         private void Reloj_Click(object sender, EventArgs e)
