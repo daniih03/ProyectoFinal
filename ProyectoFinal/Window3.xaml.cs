@@ -40,6 +40,10 @@ namespace ProyectoFinal
         {
             timeLeft = timeSlider.Value == 0 ? 0 : timeLeft - 1;
             timeSlider.Value = timeLeft;
+
+            TimeSpan timeLeftTimeSpan = TimeSpan.FromSeconds(timeLeft);
+            string timeLeftString = timeLeftTimeSpan.ToString(@"mm\:ss");
+            timeLeftTextBlock.Text = timeLeftString;
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)

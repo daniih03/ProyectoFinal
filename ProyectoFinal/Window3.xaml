@@ -12,6 +12,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBlock x:Name="timeLeftTextBlock" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" TextWrapping="Wrap" Text="00:00:00" Width="208.5" FontFamily="Yu Gothic UI Semibold" FontSize="54" Foreground="White"/>
         <Slider Grid.Row="0" x:Name="timeSlider" VerticalAlignment="Top" Minimum="0" Maximum="120" Value="60" TickFrequency="1" IsSnapToTickEnabled="True" Margin="0,57,0,82.666" Grid.RowSpan="2" />
         <Button Grid.Row="1" x:Name="startButton" HorizontalAlignment="Right" Content="Iniciar" Click="startButton_Click" Width="100" Height="100" Margin="0,19.833,541.5,19.833" Background="#FF004406" BorderBrush="#FF00DC14" Foreground="#FF00DC14" FontFamily="Yu Gothic UI Semilight" FontSize="20" />
         <Button Grid.Row="1" x:Name="stopButton" HorizontalAlignment="Left" Content="Parar" Click="stopButton_Click" Width="100" Height="100" Margin="541.5,19.833,0,19.833" FontSize="20" FontFamily="Yu Gothic UI Semilight" Background="#FF440000" BorderBrush="#FFDC0000" Foreground="#FFDC0000" />
